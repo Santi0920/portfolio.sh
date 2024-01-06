@@ -1,0 +1,151 @@
+---
+import HtmlIcon from './icons/Html.astro'
+import CSSIcon from './icons/CSS.astro'
+import JSIcon from './icons/JS.astro'
+import Laravelcon from './icons/Laravel.astro'
+import BSIcon from './icons/BS.astro'
+import MySQLIcon from './icons/SQL.astro'
+import GitHubIcon from './icons/Github.astro'
+import PHPIcon from './icons/PHP.astro'
+import AstroIcon from './icons/AstroIcon.astro'
+import TailwindIcon from './icons/Tailwind.astro'
+const TAGS = {
+    HTML: {
+        name: 'HTML',
+        class: 'bg-gray-300/80 text-black font-semibold',
+        icon: HtmlIcon,
+    },
+    CSS: {
+        name: 'CSS',
+        class: 'bg-gray-300/80 text-black font-semibold',
+        icon: CSSIcon,
+    },
+    JS: {
+        name: 'JavaScript',
+        class: 'bg-gray-300/80 text-black font-semibold',
+        icon: JSIcon,
+    },
+    LARAVEL: {
+        name: 'Laravel',
+        class: 'bg-gray-300/80 text-black font-semibold',
+        icon: Laravelcon,
+    },
+    BS: {
+        name: 'Bootstrap',
+        class: 'bg-gray-300/80 text-black font-semibold',
+        icon: BSIcon,
+    },
+    SQL: {
+        name: 'MySQL',
+        class: 'bg-gray-300/80 text-black font-semibold',
+        icon: MySQLIcon,
+    },
+    GITHUB: {
+        name: 'GitHub',
+        class: 'bg-gray-300/80 text-black font-semibold',
+        icon: GitHubIcon,
+    },
+    PHP: {
+        name: 'PHP',
+        class: 'bg-gray-300/80 text-black font-semibold',
+        icon: PHPIcon,
+    },    
+    TAILWIND: {
+        name: 'Tailwind CSS',
+        class: 'bg-gray-300/80 text-black font-semibold',
+        icon: TailwindIcon,
+    },    
+
+}
+
+const PROJECTS = [
+    {
+        title: '#1 Financial Management',
+        description: `Software was created to optimize waiting times for the associate of the Coopserp company. It is a website which is used at the national level (Colombia) to make requests for associate credit data. A functionality was created for printing tickets with a thermal printer, in order to keep track of the people who associate with the company.`,
+        image: ["/projects/index.png", "/projects/login.png", "/projects/agencia.png", "/projects/ticket.png", "/projects/consultar.png"],
+        tags: [TAGS.HTML, TAGS.CSS, TAGS.JS, TAGS.LARAVEL, TAGS.BS, TAGS.SQL, TAGS.PHP, TAGS.GITHUB]
+    },
+    {
+        title: '#2 Voting System',
+        description: `The voting software that I have developed is a complete and efficient tool for electoral management, which allows you to register votes, add or delete candidates and automatically generate five types of PDF reports at the end of the vote. These reports include order by card, voting by agency at the national level in Colombia, order by number of votes, order by seat to highlight the 45 selected candidates, and a total summary of the electoral process. This solution is designed to ensure transparent and secure voting.`,
+        image: ["/projects/candidatos.png", "/projects/pdf4.png", "/projects/tarjeton.png", "/projects/persona.png", "/projects/voto.png"],
+        tags: [TAGS.HTML, TAGS.CSS, TAGS.JS, TAGS.LARAVEL, TAGS.TAILWIND, TAGS.SQL, TAGS.PHP, TAGS.GITHUB]
+    },
+    {
+        title: '#3 Restful API',
+        description: `I have developed specialized APIs to consult IBM AS400 systems, with the main objective of extracting financial information from the clients of a financial company. These APIs connect via ODBC to access the relevant tables. In this process, I have designed models to perform efficient queries and controllers that manage the logic of the response, ensuring that a clear result is delivered, whether successful or indicating some error. This approach ensures effective integration and accurate retrieval of financial data.`,
+        image: ["/projects/postman.png", "/projects/modelo.png", "/projects/api.png", "/projects/controlador.png", "/projects/garantia.png"],
+        tags: [TAGS.LARAVEL, TAGS.SQL, TAGS.PHP, TAGS.GITHUB]
+    }
+]
+---
+
+{
+    PROJECTS.map(({title, description, image, tags}) => (
+        <article class="mb-10">
+            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+            <p class="text-lg mb-4 text-pretty">{description}</p>
+            <ul class="flex flex-wrap gap-x-2 gap-y-2">
+                {
+                    tags.map((tag) =>(
+                        <li>
+                            <span class={`flex gap-x-2 rounded-full text-sm ${tag.class} py-1 px-2`}>
+                                <tag.icon class="size-5" />
+                                {tag.name}
+                            </span>
+                        </li>
+                    ))
+                }
+            </ul>
+            
+
+            <div id="default-carousel" class="relative w-full mt-5" data-carousel="static">
+                <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+                    <!-- Item 1 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src={image[0]} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src={image[1]} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src={image[2]} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    </div>
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src={image[3]} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    </div>
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src={image[4]} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    </div>
+                </div>
+                <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+                </div>
+                <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                        </svg>
+                        <span class="sr-only">Previous</span>
+                    </span>
+                </button>
+                <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                        </svg>
+
+                        <span class="sr-only">Next</span>
+                    </span>
+                </button>
+            </div>
+            
+        </article>
+    ))
+}

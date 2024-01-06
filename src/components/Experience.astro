@@ -1,0 +1,26 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+const EXPERIENCE = [
+  {
+    "date": "November 2023 - Currently",
+    "title": "Full Stack Developer - Coopserp (Cali, Colombia)",
+    "description": "Creation of web pages for a financial company, processes are being automated, creation of voting software, implementation of credits software for printing with thermal printers, generation of PDFs in order to have reports.",
+  },
+  {
+    "date": "March - November 2023",
+    "title": "Freelancer Full Stack Developer - Coopserp (Cali, Colombia)",
+    "description": "Creation of web pages which will be in charge of managing loans from clients, new employees and suppliers to a financial company. In order to optimize times and ensure that everything is digital."
+  }
+]
+
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3">   
+    {
+        EXPERIENCE.map(experience => (
+            <li class="mb-10 ms-4">
+                <ExperienceItem {...experience} />    
+            </li>
+        ))
+    }               
+</ol>

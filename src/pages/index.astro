@@ -1,0 +1,78 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Badge from '../components/Badge.astro';
+import LinkedinIcon from '../components/icons/LinkedIn.astro';
+import GithubIcon from '../components/icons/Github.astro';
+import MailIcon from '../components/icons/Mail.astro';
+import SocialPill from '../components/SocialPill.astro';
+import Expirience from '../components/Experience.astro';
+import SectionContainer from '../components/SectionContainer.astro';
+import Briefcase from '../components/icons/Briefcase.astro';
+import CvIcon from '../components/icons/CvIcon.astro';
+import ProjectIcon from '../components/icons/Projects.astro';
+import SkillIcon from '../components/icons/Skills.astro';
+import Cv from '../components/Cv.astro';
+import Projects from '../components/Projects.astro';
+import Skills from '../components/Skills.astro';
+
+---
+
+<Layout title="Santiago's Portfolio - Full Stack Developer" description="Hire Santiago Henao now!">
+	<main class="px-4" id="home">
+		<SectionContainer class="py-16 pb-24">
+			<img class="rounded-lg w-45 h-45 mb-4 mx-auto" src="fotosanti.jpg" alt="Santiago Henao">
+			<h1 class="text-white text-2xl md:text-3xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">Hey, I'm Santiago Henao <a href="https://www.linkedin.com/in/santiago-henao-1034ab205/" target="_blank" rel="noopener" class="flex justify-center items-center"><Badge>Available for working</Badge></a></h1>
+			<h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]"><span>+2 years experience</span>. <span class="text-yellow-200/90"> Software Engineer and Full Stack Developer</span>. <span class="opacity-85">I specialize creating web pages for optimizing and automating processes based on stakeholder's necessities</span>.<span class="text-orange-100/70"> From Cali, Colombia</span>.</h2>
+			<nav class="flex gap-4 mt-8 flex-wrap">
+				<SocialPill href="https://www.linkedin.com/in/santiago-henao-1034ab205/">
+					<LinkedinIcon class="size-4 md:size-6" />
+						LinkedIn
+				</SocialPill>
+
+				<SocialPill href="https://github.com/Santi0920">
+					<GithubIcon class="size-4 md:size-6" />
+						GitHub
+				</SocialPill>
+
+				<SocialPill href="mailto:santicashe0920@gmail.com">
+					<MailIcon class="size-4 md:size-6" />
+						santicashe0920@gmail.com
+				</SocialPill>
+
+				<Cv href="cv/CV-Santiago Castaño Henao.pdf" download="CV - Santiago Castaño Henao.pdf">
+					<CvIcon class="size-4 md:size-6" />
+					Download CV
+				</Cv>
+				
+			</nav>
+		</SectionContainer>
+		
+
+		<SectionContainer id="skills" class="pb-2">
+			<h2 class="text-4xl font-semibold mb-6 flex gap-x-3 items-center">
+				<SkillIcon class="size-7" />
+				Skills
+			</h2>
+			<h1>These are the programming languages and technologies with which I have been able to work and develop my skills.</h1>
+			<Skills />
+		</SectionContainer>
+
+		<SectionContainer id="experience">
+			<h2 class="text-4xl font-semibold mb-6 flex gap-x-3 items-center">
+				<Briefcase class="size-7" />
+				Work Experience
+			</h2>
+			<Expirience />
+		</SectionContainer>
+
+		<SectionContainer id="projects">
+			<h2 class="text-4xl font-semibold mb-6 flex gap-x-3 items-center">
+				<ProjectIcon class="size-7" />
+				Projects
+			</h2>
+			<Projects />
+			
+		</SectionContainer>
+		
+	</main>
+</Layout>
