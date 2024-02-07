@@ -9,6 +9,8 @@ import GitHubIcon from './icons/Github.astro'
 import PHPIcon from './icons/PHP.astro'
 import AstroIcon from './icons/AstroIcon.astro'
 import TailwindIcon from './icons/Tailwind.astro'
+import VueIcon from './icons/Vue.astro'
+import Vue from './icons/Vue.astro'
 const TAGS = {
     HTML: {
         name: 'HTML',
@@ -55,6 +57,17 @@ const TAGS = {
         class: 'bg-gray-300/80 text-black font-semibold',
         icon: TailwindIcon,
     },    
+    VUE: {
+        name: 'Vue JS',
+        class: 'bg-gray-300/80 text-black font-semibold',
+        icon: VueIcon,
+    },  
+    URL: {
+        name: 'LINK',
+        class: 'bg-gray-300/80 text-black font-semibold',
+        icon: Vue,
+    }
+
 
 }
 
@@ -76,6 +89,13 @@ const PROJECTS = [
         description: `I have developed specialized APIs to consult IBM AS400 systems, with the main objective of extracting financial information from the clients of a financial company. These APIs connect via ODBC to access the relevant tables. In this process, I have designed models to perform efficient queries and controllers that manage the logic of the response, ensuring that a clear result is delivered, whether successful or indicating some error. This approach ensures effective integration and accurate retrieval of financial data.`,
         image: ["/projects/postman.png", "/projects/modelo.png", "/projects/api.png", "/projects/controlador.png", "/projects/garantia.png"],
         tags: [TAGS.LARAVEL, TAGS.SQL, TAGS.PHP, TAGS.GITHUB]
+    },
+    {
+        title: '#4 Local Weather App',
+        description: `
+The weather application I created enables users to easily check the current temperature in Celsius, access detailed daily forecasts, and obtain a week-long outlook for any city or country. Leveraging the Mapbox and OpenWeatherMap APIs ensures accurate and localized weather information. Users can conveniently save and manage multiple locations, storing preferences in the page's local storage. With its intuitive interface, the application ensures a seamless user experience. Furthermore, users can remove saved locations, providing a personalized and efficient tool for staying informed about the weather.`,
+        image: ["/projects/weatherindex.png", "/projects/busqueda.png", "/projects/resultado.png", "/projects/infomadrid.png", "/projects/listado.png"],
+        tags: [TAGS.URL,TAGS.VUE,TAGS.TAILWIND, TAGS.HTML, TAGS.CSS, TAGS.GITHUB]
     }
 ]
 ---
@@ -147,5 +167,6 @@ const PROJECTS = [
             </div>
             
         </article>
+        
     ))
 }
