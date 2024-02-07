@@ -11,6 +11,15 @@ import AstroIcon from './icons/AstroIcon.astro'
 import TailwindIcon from './icons/Tailwind.astro'
 import VueIcon from './icons/Vue.astro'
 import Vue from './icons/Vue.astro'
+import type { ComponentInstance } from 'astro'
+
+interface Props{
+    name: string
+    class: string
+    href?: string
+    icon?: ComponentInstance
+}
+
 const TAGS = {
     HTML: {
         name: 'HTML',
@@ -65,7 +74,8 @@ const TAGS = {
     URL: {
         name: 'LINK',
         class: 'bg-gray-300/80 text-black font-semibold',
-        icon: Vue,
+        href: 'https://monumental-cannoli-455e5a.netlify.app/',
+        icon: 's',
     }
 
 
@@ -110,8 +120,13 @@ The weather application I created enables users to easily check the current temp
                     tags.map((tag) =>(
                         <li>
                             <span class={`flex gap-x-2 rounded-full text-sm ${tag.class} py-1 px-2`}>
+                                
                                 <tag.icon class="size-5" />
+                                <a href={tag.href} target="_blank">
                                 {tag.name}
+                            </a>
+                            
+                                
                             </span>
                         </li>
                     ))
